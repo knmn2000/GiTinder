@@ -2,7 +2,7 @@ const base = '/api/v1';
 const domain = 'somecompany.com';
 const DEFAULTS = {
   domain,
-  appName: 'FridayApp',
+  appName: 'GiTinder',
   defaultLocale: {
     lang: 'en',
   },

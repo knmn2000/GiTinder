@@ -1,6 +1,6 @@
-import { StyleSheet, Platform, ViewStyle, TextStyle } from 'react-native';
+import {StyleSheet, Platform, ViewStyle, TextStyle} from 'react-native';
 
-import { TYPOGRAPHY } from './typography';
+import {TYPOGRAPHY} from './typography';
 
 export const widgetPaddingValue = 16;
 
@@ -18,7 +18,7 @@ const LAYOUT = StyleSheet.create({
   shadow: {
     shadowOpacity: 0.25,
     shadowRadius: 3,
-    shadowOffset: { width: 3, height: 3 },
+    shadowOffset: {width: 3, height: 3},
     elevation: Platform.OS === 'ios' ? 0 : 3,
   },
 });
@@ -127,6 +127,18 @@ const TEXT_INPUT = {
   }),
 };
 
+const CARD = StyleSheet.create({
+  card: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    height: 300,
+  },
+  noMoreCardsText: {
+    fontSize: 22,
+  },
+});
+
 const GLOBAL = {
   LAYOUT,
   ELEMENTS,
@@ -134,6 +146,7 @@ const GLOBAL = {
   FONTS,
   TEXT,
   TEXT_INPUT,
+  CARD,
 };
 
-export { GLOBAL };
+export {GLOBAL};

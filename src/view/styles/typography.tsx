@@ -2,7 +2,7 @@ const COLOR = {
   // CTA
   Primary: '#565656',
   Secondary: '#399BE0',
-  Default: '#FFFFFF',
+  Default: '#F9F9F9',
   DefaultSelected: '#222222',
   Border: '#E7E7E8',
   Success: '#2BC480',
@@ -51,8 +51,8 @@ const BUTTON = {
 };
 
 const ELEMENTS = {
-  CategoryIcons: { marginRight: 20 },
-  Card: { marginBottom: 30 },
+  CategoryIcons: {marginRight: 20},
+  Card: {marginBottom: 30},
 };
 
 const TYPOGRAPHY = {
@@ -62,4 +62,4 @@ const TYPOGRAPHY = {
   ELEMENTS,
 };
 
-export { TYPOGRAPHY };
+export {TYPOGRAPHY};
