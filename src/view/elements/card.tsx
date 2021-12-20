@@ -10,12 +10,16 @@ export interface Props {
   style?: ViewStyle;
 }
 
-/**
- * Default Button for the application
- */
 const CARD: React.FC<Props> = ({text, backgroundColor}: Props) => (
   <View style={[GLOBAL.CARD.card, {backgroundColor: backgroundColor}]}>
-    <CTEXT style={GLOBAL.CTA.Style.primaryText}>{text}</CTEXT>
+    <View style={[GLOBAL.CARD.main]}>
+      <CTEXT style={[GLOBAL.FONTS.h1, GLOBAL.CTA.Style.primaryText]}>
+        {text}
+      </CTEXT>
+    </View>
+    <View style={[GLOBAL.CARD.bottom]}>
+      <CTEXT>align bottom</CTEXT>
+    </View>
   </View>
 );
 

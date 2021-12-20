@@ -1,6 +1,7 @@
+const BORDER_RADIUS = 5;
 const COLOR = {
   // CTA
-  Primary: '#565656',
+  Primary: '#1C1E1F',
   Secondary: '#399BE0',
   Default: '#F9F9F9',
   DefaultSelected: '#222222',
@@ -22,7 +23,7 @@ const FONT = {
     height: 36,
     fontSize: 14,
     borderWidth: 0.5,
-    borderRadius: 5,
+    borderRadius: BORDER_RADIUS,
     paddingHorizontal: 12,
   },
 };
@@ -32,7 +33,7 @@ const BUTTON = {
   primary: {
     height: 48,
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: BORDER_RADIUS * 2,
     paddingVertical: 8,
     justifyContent: 'center',
     paddingHorizontal: 20,
@@ -43,7 +44,7 @@ const BUTTON = {
   secondary: {
     height: 48,
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: BORDER_RADIUS,
     text: {
       fontSize: 14,
     },
@@ -60,6 +61,7 @@ const TYPOGRAPHY = {
   FONT,
   BUTTON,
   ELEMENTS,
+  BORDER_RADIUS,
 };
 
 export {TYPOGRAPHY};

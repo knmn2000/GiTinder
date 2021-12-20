@@ -1,4 +1,10 @@
-import {StyleSheet, Platform, ViewStyle, TextStyle} from 'react-native';
+import {
+  StyleSheet,
+  Platform,
+  ViewStyle,
+  TextStyle,
+  Dimensions,
+} from 'react-native';
 
 import {TYPOGRAPHY} from './typography';
 
@@ -46,7 +52,7 @@ const CTA = {
       paddingHorizontal: TYPOGRAPHY.BUTTON.primary.paddingHorizontal,
     },
     primaryText: {
-      color: TYPOGRAPHY.COLOR.Default,
+      color: TYPOGRAPHY.COLOR.Primary,
       fontSize: (TYPOGRAPHY.BUTTON.primary.text as TextStyle).fontSize,
     },
     secondary: {
@@ -129,10 +135,24 @@ const TEXT_INPUT = {
 
 const CARD = StyleSheet.create({
   card: {
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: TYPOGRAPHY.BORDER_RADIUS * 2,
+    width: Dimensions.get('window').width * 0.9,
+    height: Dimensions.get('window').height * 0.7,
+  },
+  main: {
+    alignSelf: 'center',
     justifyContent: 'center',
-    alignItems: 'center',
-    width: 300,
-    height: 300,
+    flex: 5,
+  },
+  bottom: {
+    // padding: 50,
+    // margin: 50,
+    justifyContent: 'flex-end',
+    flex: 1,
   },
   noMoreCardsText: {
     fontSize: 22,

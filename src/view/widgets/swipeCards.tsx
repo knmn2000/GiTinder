@@ -17,18 +17,20 @@ interface Props {
 }
 
 const data = [
-  {text: 'Repo 1', backgroundColor: 'red'},
-  {text: 'Repo 2', backgroundColor: 'purple'},
-  {text: 'Repo 3', backgroundColor: 'green'},
-  {text: 'Repo 4', backgroundColor: 'blue'},
-  {text: 'Repo 5', backgroundColor: 'cyan'},
-  {text: 'Repo 6', backgroundColor: 'orange'},
+  {text: 'Repo 1', backgroundColor: '#e6e8eb'},
+  {text: 'Repo 2', backgroundColor: '#e6e8eb'},
+  {text: 'Repo 3', backgroundColor: '#e6e8eb'},
+  {text: 'Repo 4', backgroundColor: '#e6e8eb'},
+  {text: 'Repo 5', backgroundColor: '#e6e8eb'},
+  {text: 'Repo 6', backgroundColor: '#e6e8eb'},
 ];
 
 const Swipable: React.FC<Props> = ({componentId, title}: Props) => {
   return (
     <SwipeCards
       cards={data}
+      loop={true}
+      key={componentId}
       renderCard={(cardData: {text: string; backgroundColor: string}) => (
         <CARD {...cardData} />
       )}

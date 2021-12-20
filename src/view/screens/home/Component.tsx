@@ -1,6 +1,12 @@
 import * as React from 'react';
 import {Navigation} from 'react-native-navigation';
-import {SafeAreaView, ScrollView, TouchableOpacity, Image} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+  LogBox,
+} from 'react-native';
 
 import {GLOBAL} from '../../styles/global';
 import {Category} from '../../widgets/category';
@@ -11,7 +17,6 @@ import {CTEXT, CTEXTINPUT} from '../../elements/custom';
 
 import {Props} from './index';
 import {Swipable} from '../../widgets/swipeCards';
-import {YellowBox} from 'react-native';
 
 interface State {
   name: string;
@@ -27,7 +32,7 @@ class Home extends React.PureComponent<Props, State> {
   }
 
   componentDidMount() {
-    YellowBox.ignoreWarnings(['Animated: `useNativeDriver`']);
+    LogBox.ignoreLogs(['Animated', 'componentWillReceiveProps']);
   }
 
   showBurgerMenu() {
@@ -66,21 +71,7 @@ class Home extends React.PureComponent<Props, State> {
             />
           </TouchableOpacity>
           <Swipable componentId={componentId} />
-          {/* Swipe Card */}
           {/* bottom bar*/}
-          {/* <Category componentId={componentId} title={locale.Categories} />
-          <CTEXT>{locale.Home}</CTEXT>
-          <CTEXT>{name}</CTEXT>
-          <CTEXTINPUT />
-          <BUTTON_DEFAULT
-            onClick={this.showPushScreen}
-            title={'Push Screen'}
-            style={{
-              alignSelf: 'center',
-              marginTop: 50,
-              width: 250,
-            }}
-          /> */}
         </ScrollView>
       </SafeAreaView>
     );
