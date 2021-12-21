@@ -37,6 +37,14 @@ const ELEMENTS = StyleSheet.create({
     alignItems: 'center',
     marginRight: TYPOGRAPHY.ELEMENTS.CategoryIcons.marginRight,
   },
+  Chip: {
+    backgroundColor: TYPOGRAPHY.COLOR.Primary,
+    borderRadius: 16,
+    display: 'flex',
+    alignSelf: 'flex-start',
+    marginTop: 4,
+    padding: 8,
+  },
 });
 
 const CTA = {
@@ -146,13 +154,29 @@ const CARD = StyleSheet.create({
   main: {
     alignSelf: 'center',
     justifyContent: 'center',
-    flex: 5,
+    flex: 3,
   },
   bottom: {
-    // padding: 50,
-    // margin: 50,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    padding: 16,
+  },
+  bottomText: {
+    color: 'white',
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowOffset: {width: 1, height: 1},
+    textShadowRadius: 8,
+    marginTop: 4,
+    flex: 1,
+  },
+  header: {
+    ...TYPOGRAPHY.FONT.extraLarge,
+    fontWeight: 'bold',
+  },
+  subheader: {
+    ...TYPOGRAPHY.FONT.subheader,
   },
   noMoreCardsText: {
     fontSize: 22,

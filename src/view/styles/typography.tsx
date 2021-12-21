@@ -26,6 +26,14 @@ const FONT = {
     borderRadius: BORDER_RADIUS,
     paddingHorizontal: 12,
   },
+  subheader: {
+    fontSize: 16,
+    marginBottom: 4,
+  },
+  extraLarge: {
+    fontSize: 36,
+    marginBottom: 10,
+  },
 };
 
 const BUTTON = {
