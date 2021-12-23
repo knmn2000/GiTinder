@@ -28,11 +28,13 @@ const FONT = {
   },
   subheader: {
     fontSize: 16,
-    marginBottom: 4,
+    // marginBottom: 4,
+    // paddingBottom: 4,
   },
   extraLarge: {
     fontSize: 36,
-    marginBottom: 10,
+    // marginBottom: 10,
+    // paddingBottom: 10,
   },
 };
 

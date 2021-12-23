@@ -1,24 +1,33 @@
 import * as React from 'react';
-import {TouchableOpacity, ViewStyle} from 'react-native';
+import {TouchableOpacity, ViewStyle, View} from 'react-native';
 
-import {CTEXT} from './custom';
+import {CTEXT} from '../elements/custom';
 import {GLOBAL} from '../styles/global';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
-type Callback = () => any;
-export interface Props {
-  title: string;
-  onClick: Callback;
-  style?: ViewStyle;
-}
+export interface Props {}
 
 // TODO: Create a button container which contains the button to fork and star the given repo
-const BUTTON_DEFAULT: React.FC<Props> = ({title, onClick, style}: Props) => (
-  <TouchableOpacity
-    activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
-    style={[GLOBAL.CTA.Style.primary, GLOBAL.LAYOUT.shadow, style]}
-    onPress={() => onClick()}>
-    <CTEXT style={GLOBAL.CTA.Style.primaryText}>{title}</CTEXT>
-  </TouchableOpacity>
+const BUTTON_CONTAINER: React.FC<Props> = ({}: Props) => (
+  <View
+    // activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
+    style={[GLOBAL.CTA.Style.secondary, GLOBAL.CTA.Style.buttonContainer]}>
+    <Icon
+      onPress={() => console.log('brrr')}
+      name="star-o"
+      size={22}
+      color="#fff"
+      style={GLOBAL.CTA.Style.icon}
+    />
+    {/* TODO */}
+    {/* How do you add a "-----" divider here ?!*/}
+    <Icon
+      onPress={() => console.log('irrr')}
+      name="code-fork"
+      size={26}
+      color="#fff"
+    />
+  </View>
 );
 
-export {BUTTON_DEFAULT};
+export {BUTTON_CONTAINER};

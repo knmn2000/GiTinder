@@ -78,6 +78,16 @@ const CTA = {
       color: TYPOGRAPHY.COLOR.Primary,
       fontSize: (TYPOGRAPHY.BUTTON.secondary.text as TextStyle).fontSize,
     },
+    buttonContainer: {
+      justifyContent: 'space-around',
+      alignSelf: 'flex-end',
+      backgroundColor: 'rgba(0,0,0,0.55)',
+      padding: 12,
+      display: 'flex',
+      flexDirection: 'column',
+      height: Dimensions.get('window').height * 0.12,
+    },
+    icon: {},
   }),
   TouchableOpacity: {
     default: 0.8,
@@ -143,13 +153,11 @@ const TEXT_INPUT = {
 
 const CARD = StyleSheet.create({
   card: {
-    // justifyContent: 'center',
-    // alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
     borderRadius: TYPOGRAPHY.BORDER_RADIUS * 2,
     width: Dimensions.get('window').width * 0.9,
-    height: Dimensions.get('window').height * 0.7,
+    height: Dimensions.get('window').height * 0.8,
   },
   main: {
     alignSelf: 'center',
@@ -157,7 +165,7 @@ const CARD = StyleSheet.create({
     flex: 3,
   },
   bottom: {
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     flex: 1,
     display: 'flex',
     flexDirection: 'column',

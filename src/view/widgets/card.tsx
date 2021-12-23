@@ -6,6 +6,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import {CTEXT} from '../elements/custom';
 import {CHIP} from '../elements/chip';
 import {GLOBAL} from '../styles/global';
+import {BUTTON_CONTAINER} from './buttonContainer';
+import Icon from 'react-native-vector-icons/dist/AntDesign';
 
 export interface Props {
   text: string;
@@ -15,6 +17,9 @@ export interface Props {
 
 const CARD: React.FC<Props> = ({text, backgroundColor}: Props) => (
   <View style={[GLOBAL.CARD.card, {backgroundColor: backgroundColor}]}>
+    <View style={[{padding: 10}]}>
+      <BUTTON_CONTAINER />
+    </View>
     <View style={[GLOBAL.CARD.main]}>
       <CTEXT style={[GLOBAL.FONTS.h1, GLOBAL.CTA.Style.primaryText]}>
         {text}

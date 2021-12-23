@@ -34,15 +34,9 @@ const Swipable: React.FC<Props> = ({componentId, title}: Props) => {
       renderCard={(cardData: {text: string; backgroundColor: string}) => (
         <CARD {...cardData} />
       )}
-      renderNoMoreCards={() => {
-        <View>
-          <CTEXT style={GLOBAL.CTA.Style.primaryText}>No more cards!</CTEXT>
-        </View>;
-      }}
       handleYup={() => console.log('swiped')}
       handleNope={() => console.log('swiped')}
       handleMaybe={() => console.log('swiped')}
-      hasMaybeAction
     />
   );
 };
