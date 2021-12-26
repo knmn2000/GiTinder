@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Linking} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import {
   SafeAreaView,

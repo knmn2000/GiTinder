@@ -4,7 +4,7 @@ import {TouchableOpacity, ViewStyle, View} from 'react-native';
 import {CTEXT} from '../elements/custom';
 import {GLOBAL} from '../styles/global';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
-
+import API from '../../../shared/services/core/api';
 export interface Props {}
 
 // TODO: Create a button container which contains the button to fork and star the given repo
@@ -13,7 +13,7 @@ const BUTTON_CONTAINER: React.FC<Props> = ({}: Props) => (
     // activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
     style={[GLOBAL.CTA.Style.secondary, GLOBAL.CTA.Style.buttonContainer]}>
     <Icon
-      onPress={() => console.log('brrr')}
+      onPress={() => API.login()}
       name="star-o"
       size={22}
       color="#fff"

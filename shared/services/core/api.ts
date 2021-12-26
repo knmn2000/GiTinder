@@ -1,5 +1,8 @@
 import config from '../../../src/config';
 import { jsonToQueryString } from '../utilities/lib';
+// import axios from "axios";
+import { Linking } from 'react-native';
+import axios from 'axios';
 
 const defaultHeaders = () => {
   return {
@@ -9,20 +12,19 @@ const defaultHeaders = () => {
   };
 };
 
+const redirect : string= "https://www.gitinder.com";
 const API = {
-  get: (endpoint: string, queryParam?: any) => {
-    return fetch(endpoint + jsonToQueryString(queryParam), {
-      method: 'GET',
-      headers: defaultHeaders(),
-    });
+  // TODO : USE CONFIG TO GET THE BASE URL OF API
+  login: ()=>{
+    Linking.openURL(`https://github.com/login/oauth/authorize?client_id=512bb3642d63b04a1d2c&redirect_uri=${redirect}`);
   },
-  post: (endpoint: string, params: any) => {
-    return fetch(endpoint, {
-      method: 'POST',
-      headers: defaultHeaders(),
-      body: JSON.stringify(params),
-    });
-  },
+  getAccessToken: (code : string)=>{
+    axios.post("https://github.com/login/oauth/access_token", {
+      client_id : "",
+      client_secret: "",
+      code,
+    })
+  }
 };
 
 export default API;

@@ -2,7 +2,7 @@ import { Navigation } from 'react-native-navigation';
 
 import store from '../../shared/redux/store';
 import { registerScreens } from '../view/screens';
-import { showSplash } from './navigation';
+import tabbedNavigation, { showSplash } from './navigation';
 
 /**
  * Register screens and components for react native navigation
@@ -24,7 +24,8 @@ const app = () => {
       topBar: { visible: true, elevation: 0 },
     });
 
-    showSplash();
+    // showSplash();
+    tabbedNavigation();
   });
 };
 

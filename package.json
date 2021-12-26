@@ -36,6 +36,11 @@
     "lint:fix": "cross-env-shell tslint --fix --project ./tsconfig.json"
   },
   "dependencies": {
+    "@octokit/auth-oauth-app": "^4.3.0",
+    "@octokit/core": "^3.5.1",
+    "axios": "^0.24.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "base-64": "^1.0.0",
     "react": "^17.0.2",
     "react-native": "^0.66.0",
     "react-native-linear-gradient": "^2.5.6",

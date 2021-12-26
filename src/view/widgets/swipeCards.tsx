@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View} from 'react-native';
+import {Linking} from 'react-native';
 
 import {GLOBAL} from '../styles/global';
 import {CTEXT} from '../elements/custom';
@@ -8,6 +8,7 @@ import {CTEXT} from '../elements/custom';
 import {CARD} from './card';
 // import {BUTTON_DEFAULT} from '../elements/buttons';
 import SwipeCards from 'react-native-swipe-cards';
+import API from '../../../shared/services/core/api';
 // import router from '../../navigators/router';
 // import {OptionsTopBarTitle} from 'react-native-navigation';
 
@@ -26,6 +27,15 @@ const data = [
 ];
 
 const Swipable: React.FC<Props> = ({componentId, title}: Props) => {
+  React.useEffect(() => {
+    Linking.getInitialURL().then(url => {
+      if (url) {
+        // TOOD: check if current code == code
+        const code: string = new URL(url).search.split('=')[1];
+        API.getAccessToken(code);
+      }
+    });
+  }, []);
   return (
     <SwipeCards
       cards={data}
