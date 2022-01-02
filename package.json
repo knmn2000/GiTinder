@@ -9,26 +9,27 @@
     "react native navigation",
     "boilerplate"
   ],
-  "version": "0.5.0",
+  "version": "0.0.1",
   "author": {
-    "name": "Amit Mangal",
-    "email": "mangalamitash@gmail.com",
-    "url": "https://github.com/AmitM30"
+    "name": "Karan Mannan",
+    "email": "karan1501mannan@gmail.com",
+    "url": "https://github.com/knmn2000"
   },
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git://github.com/AmitM30/react-native-typescript-boilerplate"
+    "url": "git://github.com/knmn2000/GiTinder"
   },
   "bugs": {
-    "url": "https://github.com/AmitM30/react-native-typescript-boilerplate/issues",
-    "email": "mangalamitash@gmail.com"
+    "url": "https://github.com/knmn2000/GiTinder/issues",
+    "email": "karan1501mannan@gmail.com"
   },
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "cross-env-shell jest",
     "ios": "npx react-native run-ios --simulator='iPhone 12 Pro'",
     "android": "npx react-native run-android --variant=Debug",
+    "android:release": "npx react-native run-android --variant=Release",
     "clean:android": "cd android && ./gradlew clean && ./gradlew :app:bundleRelease && cd ..",
     "build:android:debug": "./gradlew assembleDebug",
     "build:android:release": "./gradlew assembleRelease",

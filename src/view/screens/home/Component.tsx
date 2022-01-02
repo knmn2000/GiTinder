@@ -15,6 +15,7 @@ import locale from '../../../constants/locale';
 import router from '../../../navigators/router';
 import {BUTTON_DEFAULT} from '../../elements/buttons';
 import {CTEXT, CTEXTINPUT} from '../../elements/custom';
+import API from '../../../../shared/services/core/api';
 
 import {Props} from './index';
 import {Swipable} from '../../widgets/swipeCards';
@@ -34,6 +35,16 @@ class Home extends React.PureComponent<Props, State> {
 
   componentDidMount() {
     LogBox.ignoreLogs(['Animated', 'componentWillReceiveProps']);
+    Linking.addEventListener('url', async res => {
+      if (res.url) {
+        // TOOD: check if current code == code
+        const code: string = res.url.split('=')[1];
+        API.getAccessToken(code, this.props.accessCode);
+      }
+    });
+  }
+  componentWillUnmount() {
+    Linking.removeAllListeners('url');
   }
 
   showBurgerMenu() {

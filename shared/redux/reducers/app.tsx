@@ -1,8 +1,9 @@
-import { IAction } from '../types/IAction';
-import { ACTION_TYPES } from '../constants/actionTypes';
+import {IAction} from '../types/IAction';
+import {ACTION_TYPES} from '../constants/actionTypes';
 
 const initialState = {
   isLoading: true,
+  accessCode: '',
 };
 
 export default (state = initialState, action: IAction<any>) => {
@@ -11,6 +12,11 @@ export default (state = initialState, action: IAction<any>) => {
       return {
         ...state,
         isLoading: false,
+      };
+    case ACTION_TYPES.OAUTH.ACCESS_CODE_GENERATED:
+      return {
+        ...state,
+        accessCode: action.data.accessCode,
       };
     default:
       return state;

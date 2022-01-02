@@ -3,6 +3,7 @@ import {Linking} from 'react-native';
 
 import {GLOBAL} from '../styles/global';
 import {CTEXT} from '../elements/custom';
+import store from '../../../shared/redux/store';
 // import router from '../../navigators/router';
 // import {Card, Carousel} from '../elements/layout';
 import {CARD} from './card';
@@ -27,15 +28,7 @@ const data = [
 ];
 
 const Swipable: React.FC<Props> = ({componentId, title}: Props) => {
-  React.useEffect(() => {
-    Linking.getInitialURL().then(url => {
-      if (url) {
-        // TOOD: check if current code == code
-        const code: string = new URL(url).search.split('=')[1];
-        API.getAccessToken(code);
-      }
-    });
-  }, []);
+  const func = () => console.log(store.getState());
   return (
     <SwipeCards
       cards={data}
@@ -45,7 +38,7 @@ const Swipable: React.FC<Props> = ({componentId, title}: Props) => {
         <CARD {...cardData} />
       )}
       handleYup={() => console.log('swiped')}
-      handleNope={() => console.log('swiped')}
+      handleNope={() => func()}
       handleMaybe={() => console.log('swiped')}
     />
   );
