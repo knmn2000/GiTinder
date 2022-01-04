@@ -9,9 +9,7 @@ export interface Props {}
 
 // TODO: Create a button container which contains the button to fork and star the given repo
 const BUTTON_CONTAINER: React.FC<Props> = ({}: Props) => (
-  <View
-    // activeOpacity={GLOBAL.CTA.TouchableOpacity.default}
-    style={[GLOBAL.CTA.Style.secondary, GLOBAL.CTA.Style.buttonContainer]}>
+  <View style={[GLOBAL.CTA.Style.secondary, GLOBAL.CTA.Style.buttonContainer]}>
     <Icon
       onPress={() => API.login()}
       name="star-o"

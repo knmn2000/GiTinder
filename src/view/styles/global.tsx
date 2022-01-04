@@ -21,6 +21,10 @@ const LAYOUT = StyleSheet.create({
   pageContainer: {
     padding: 16,
   },
+  drawer: {
+    flex: 1,
+    flexDirection: 'column',
+  },
   shadow: {
     shadowOpacity: 0.25,
     shadowRadius: 3,
@@ -86,6 +90,12 @@ const CTA = {
       display: 'flex',
       flexDirection: 'column',
       height: Dimensions.get('window').height * 0.12,
+    },
+    searchButton: {
+      marginLeft: 12,
+      marginRight: 12,
+      backgroundColor: TYPOGRAPHY.COLOR.Secondary,
+      borderWidth: 0,
     },
     icon: {},
   }),
